@@ -1,7 +1,10 @@
 import PrivyProvider from "./PrivyProvider";
+import QueryProvider from "./QueryProvider";
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
-  return <PrivyProvider>{children}</PrivyProvider>;
-};
-
-export default Providers;
+export default function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <QueryProvider>
+      <PrivyProvider>{children}</PrivyProvider>
+    </QueryProvider>
+  );
+}

@@ -5,10 +5,10 @@ import { useState } from "react";
 
 export function StakeInput() {
   const [stakeAmount, setStakeAmount] = useState<string>("");
-  const { login } = usePrivy();
+  const { login, authenticated } = usePrivy();
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+  const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && !authenticated) {
       login();
     }
   };
