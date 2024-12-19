@@ -2,6 +2,7 @@
 
 import { useBalances } from "@/hooks/useBalances";
 import { formatEther } from "viem";
+import { UnlockDate } from "./UnlockDate";
 
 export function Balances() {
   const { data: balances, isLoading } = useBalances();
@@ -23,6 +24,10 @@ export function Balances() {
       <div>Available: {parseFloat(tokenBalance).toFixed(0)} IJN</div>
       <div>Staked: {parseFloat(stakedBalance).toFixed(0)} IJN</div>
       <div>Approved for staking: {parseFloat(allowance).toFixed(0)} IJN</div>
+      <UnlockDate
+        depositTimestamp={balances.depositTimestamp}
+        lockDuration={balances.lockDuration}
+      />
     </div>
   );
 }
