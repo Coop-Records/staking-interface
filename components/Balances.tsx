@@ -1,6 +1,7 @@
 "use client";
 
 import { useBalances } from "@/hooks/useBalances";
+import { formatUnlockDate } from "@/lib/utils/formatDate";
 import { formatEther } from "viem";
 
 export function Balances() {
@@ -25,18 +26,6 @@ export function Balances() {
     ? Number(balances.lockDuration)
     : 0;
   const unlockTime = depositTime + lockDurationSeconds * 1000;
-
-  const formatUnlockDate = (timestamp: number) => {
-    return new Date(timestamp).toLocaleString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      timeZoneName: "short",
-    });
-  };
 
   return (
     <div className="flex flex-col gap-2 text-sm">
