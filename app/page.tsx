@@ -3,6 +3,7 @@
 import LoginButton from "@/components/LoginButton";
 import LogoutButton from "@/components/LogoutButton";
 import { StakeInput } from "@/components/StakeInput";
+import { Balances } from "@/components/Balances";
 import { usePrivy } from "@privy-io/react-auth";
 
 export default function Home() {
@@ -15,7 +16,10 @@ export default function Home() {
           <h1 className="text-2xl font-bold mb-8">Stake IJN</h1>
           {authenticated ? <LogoutButton /> : <LoginButton />}
         </div>
-        <StakeInput />
+        <div className="flex flex-col gap-4">
+          <Balances />
+          <StakeInput />
+        </div>
       </div>
     </main>
   );
