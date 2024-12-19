@@ -2,14 +2,31 @@
 
 import { usePrivy } from "@privy-io/react-auth";
 import { useState } from "react";
+import { useErc20Approve } from "@/hooks/useErc20Approve";
 
 export function StakeInput() {
   const [stakeAmount, setStakeAmount] = useState<string>("");
   const { login, authenticated } = usePrivy();
+  const { approve, isApproving } = useErc20Approve();
 
   const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && !authenticated) {
-      login();
+    if (e.key === "Enter") {
+      if (!authenticated) {
+        login();
+        return;
+      }
+
+      if (!stakeAmount || parseFloat(stakeAmount) <= 0) {
+        console.error("Please enter a valid amount");
+        return;
+      }
+
+      try {
+        const hash = await approve(stakeAmount);
+        console.log("Approval transaction hash:", hash);
+      } catch (error) {
+        console.error("Error approving tokens:", error);
+      }
     }
   };
 
@@ -27,8 +44,12 @@ export function StakeInput() {
         value={stakeAmount}
         onChange={(e) => setStakeAmount(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+        disabled={isApproving}
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50"
       />
+      {isApproving && (
+        <div className="text-sm text-gray-500">Approving tokens...</div>
+      )}
     </div>
   );
 }
