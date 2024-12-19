@@ -1,6 +1,6 @@
 "use client";
 
-import { useBalances } from "@/lib/hooks/useBalances";
+import { useBalances } from "@/hooks/useBalances";
 import { formatEther } from "viem";
 
 export function Balances() {
