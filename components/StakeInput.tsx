@@ -2,14 +2,32 @@
 
 import { usePrivy } from "@privy-io/react-auth";
 import { useState } from "react";
+import { getBalances } from "@/lib/viem/getBalances";
+import { Address } from "viem";
 
 export function StakeInput() {
   const [stakeAmount, setStakeAmount] = useState<string>("");
-  const { login } = usePrivy();
+  const { login, authenticated, user } = usePrivy();
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      login();
+      if (!authenticated) {
+        login();
+        return;
+      }
+
+      try {
+        const walletAddress = user?.wallet?.address as Address;
+        if (!walletAddress) {
+          console.error("No wallet address found");
+          return;
+        }
+
+        const balances = await getBalances(walletAddress);
+        console.log("Balances:", balances);
+      } catch (error) {
+        console.error("Error fetching balances:", error);
+      }
     }
   };
 
