@@ -1,5 +1,5 @@
 import { Address, parseEther, WalletClient } from "viem";
-import { erc20Abi } from "./abis/erc20";
+import { erc20Abi } from "../abis/erc20";
 import { STAKING_CONTRACT_ADDRESS, CHAIN } from "../consts";
 import { IJN_TOKEN_ADDRESS } from "../consts";
 

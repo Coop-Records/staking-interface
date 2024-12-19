@@ -16,11 +16,13 @@ export function Balances() {
 
   const tokenBalance = formatEther(balances.tokenBalance ?? BigInt(0));
   const stakedBalance = formatEther(balances.stakedBalance ?? BigInt(0));
-
+  const allowance = formatEther(balances.allowance ?? BigInt(0));
+  console.log(balances);
   return (
     <div className="flex flex-col gap-2 text-sm">
       <div>Available: {parseFloat(tokenBalance).toFixed(0)} IJN</div>
       <div>Staked: {parseFloat(stakedBalance).toFixed(0)} IJN</div>
+      <div>Approved for staking: {parseFloat(allowance).toFixed(0)} IJN</div>
     </div>
   );
 }
