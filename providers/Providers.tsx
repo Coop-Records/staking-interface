@@ -1,5 +1,3 @@
-"use client";
-
 import { type ReactNode } from "react";
 import PrivyProvider from "./PrivyProvider";
 import QueryProvider from "./QueryProvider";
