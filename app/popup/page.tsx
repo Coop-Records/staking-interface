@@ -1,10 +1,9 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { StakeInput } from "@/components/StakeInput";
+import { StakeButton } from "@/components/StakeButton";
 
 export default function StakingModal() {
   return (
@@ -62,11 +61,7 @@ export default function StakingModal() {
             />
           </div>
         </div>
-
-        {/* Stake Button Row */}
-        <Button className="w-full bg-[#FA9866] hover:bg-[#E9A684]/90 text-white rounded-3xl h-12">
-          Stake
-        </Button>
+        <StakeButton />
       </Card>
     </main>
   );
