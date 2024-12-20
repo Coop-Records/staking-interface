@@ -5,6 +5,7 @@ import Image from "next/image";
 import { StakeInput } from "@/components/StakeInput";
 import { StakeButton } from "@/components/StakeButton";
 import { TokenBalance } from "@/components/TokenBalance";
+import { LockedUntil } from "@/components/LockedUntil";
 
 export default function StakingModal() {
   return (
@@ -30,11 +31,7 @@ export default function StakingModal() {
         <StakeInput />
 
         {/* Note Row */}
-        <div className="text-center">
-          <p className="text-gray-500 text-sm">
-            Locked for 90 Days until 03/20/25
-          </p>
-        </div>
+        <LockedUntil />
 
         {/* Dotted Line Row */}
         <div className="border-t border-dashed border-gray-200" />
