@@ -14,6 +14,7 @@
 10. Screen - show `blur` effect everywhere outside the popup
 11. update "/" root route to show the popup, replacing the current code at that route.
 12. remove any unused components / libs.
+13. Update the README.md with getting started instructions and key features of the app.
 
 ## Resources
 
