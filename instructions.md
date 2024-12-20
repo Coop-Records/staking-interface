@@ -8,6 +8,7 @@
 4. Balance - show IJN balance in top right of the popup
 5. Locked Until - update with actual date withdrawal_time from now.
 6. Screen - show `blur` effect everywhere outside the popup
+7. update "/" root route to show the popup, replacing the current code at that route.
 
 ## Resources
 
