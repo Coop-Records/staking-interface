@@ -6,10 +6,11 @@
 2. see resources for what to export from the provider
 3. <StakeButton /> - pull code from page component to create a new component
 4. Stake button - calls the deposit function
-5. Balance - show IJN balance in top right of the popup
-6. Locked Until - update with actual date withdrawal_time from now.
-7. Screen - show `blur` effect everywhere outside the popup
-8. update "/" root route to show the popup, replacing the current code at that route.
+5. <TokenBalance> - new component to show the token balance. pull code from page component to create a new component.
+6. <TokenBalance> - show IJN balance in top right of the popup
+7. Locked Until - update with actual date withdrawal_time from now.
+8. Screen - show `blur` effect everywhere outside the popup
+9. update "/" root route to show the popup, replacing the current code at that route.
 
 ## Resources
 

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { StakeInput } from "@/components/StakeInput";
 import { StakeButton } from "@/components/StakeButton";
+import { TokenBalance } from "@/components/TokenBalance";
 
 export default function StakingModal() {
   return (
@@ -22,16 +23,7 @@ export default function StakingModal() {
         {/* Labels Row */}
         <div className="flex justify-between items-center">
           <span className="text-gray-500">Amount to lock</span>
-          <div className="flex items-center gap-2">
-            <Image
-              src="https://ipfs.decentralized-content.com/ipfs/QmcTqdWEkevrzESmS8um7i88kcM3AY5oLLbKSZL3ToPqjX"
-              alt="Wallet icon"
-              width={20}
-              height={20}
-              className="opacity-50"
-            />
-            <span className="text-gray-600">2500</span>
-          </div>
+          <TokenBalance />
         </div>
 
         {/* Input Row */}
