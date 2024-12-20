@@ -10,8 +10,9 @@
 6. <TokenBalance> - show IJN balance in top right of the popup
 7. <LockedUntil /> - new component to show the locked until date. pull code from page component to create a new component.
 8. <LockedUntil /> - update with actual date withdrawal_time from now.
-9. Screen - show `blur` effect everywhere outside the popup
-10. update "/" root route to show the popup, replacing the current code at that route.
+9. <PopupCard /> - new component to wrap the popup content. pull code from page component to create a new component.
+10. Screen - show `blur` effect everywhere outside the popup
+11. update "/" root route to show the popup, replacing the current code at that route.
 
 ## Resources
 

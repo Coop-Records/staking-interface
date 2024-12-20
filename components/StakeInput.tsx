@@ -40,7 +40,7 @@ export function StakeInput() {
   console.log("isProcessing", isProcessing);
   return (
     <div>
-      <div className="bg-gray-50 rounded-2xl p-2 flex items-center justify-between">
+      <div className="bg-gray-50 rounded-2xl p-2 flex items-center">
         <input
           type="number"
           min="0"
@@ -50,15 +50,15 @@ export function StakeInput() {
           onChange={(e) => setStakeAmount(e.target.value)}
           onKeyDown={handleKeyDown}
           disabled={isProcessing}
-          className="border-0 bg-transparent text-lg w-24 p-0 focus-visible:ring-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50"
+          className="border-0 bg-transparent text-lg w-full p-0 focus:outline-none focus:ring-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50"
         />
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 pr-4">
           <Image
             src="https://ipfs.decentralized-content.com/ipfs/QmcTqdWEkevrzESmS8um7i88kcM3AY5oLLbKSZL3ToPqjX"
             alt="IJN token"
             width={24}
             height={24}
-            className="rounded-full"
+            className="rounded rounded-xl"
           />
           <span className="font-medium">IJN</span>
         </div>
