@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useStakingProvider } from "@/providers/StakingProvider";
 import { formatEther } from "viem";
 import { WalletCards } from "lucide-react";
