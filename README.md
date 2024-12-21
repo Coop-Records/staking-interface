@@ -26,8 +26,6 @@ Create a `.env.local` file in the root directory:
 
 ```bash
 NEXT_PUBLIC_PRIVY_APP_ID=your-privy-app-id
-NEXT_PUBLIC_IJN_TOKEN_ADDRESS=your-token-address
-NEXT_PUBLIC_STAKING_CONTRACT_ADDRESS=your-staking-contract-address
 ```
 
 ### Installation
