@@ -15,8 +15,6 @@ export function StakeInput() {
     isDepositing,
   } = useStakingProvider();
 
-  console.log("isApproving", isApproving);
-  console.log("isDepositing", isDepositing);
   const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       try {
@@ -37,7 +35,6 @@ export function StakeInput() {
 
   const isProcessing = isApproving || isDepositing;
 
-  console.log("isProcessing", isProcessing);
   return (
     <div>
       <div className="bg-gray-50 rounded-2xl p-2 flex items-center">
