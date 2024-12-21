@@ -33,7 +33,7 @@ NEXT_PUBLIC_PRIVY_APP_ID=your-privy-app-id
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/staking-interface.git
+git clone https://github.com/Coop-Records/staking-interface.git
 cd staking-interface
 ```
 
